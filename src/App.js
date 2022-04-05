@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import Navbar  from './components/Navbar';
+import TrackedDATA from './components/Tracked-DATA';
+// import Table from './components/Table';
+import TableDisplay from './components/TableDisplay';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Dashboard />} />
+          <Route path='/data' element={<TrackedDATA />} />
+          <Route path='/table-display' element={<TableDisplay />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

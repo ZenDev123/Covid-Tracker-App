@@ -1,0 +1,26 @@
+.nav{
+    background-color: #121212 !important;
+    padding: 10px;
+    position: static;
+}
+.nav > .links{
+    display: flex;
+    color: #fff !important;
+    /* justify-content: space-between; */
+}
+.nav > .links > a{
+    color: #fff;
+    margin: 10px;
+    text-decoration: none;
+}
+.nav > .links > a:visited{
+    color: #fff;
+}
+@media screen and (max-width: 500px) {
+    .nav > .links{
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        overflow-y: scroll;
+    }
+}
