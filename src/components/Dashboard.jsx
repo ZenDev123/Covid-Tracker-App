@@ -2,18 +2,23 @@ import React from 'react'
 import { Avatar, Box, Card, Chip, Divider, Typography } from '@material-ui/core'
 import creator from './images/Creator.jpg'
 import BlogContent from './BlogContent'
-
+import './css/Dashboard.css'
 const Dashboard = () => {
   return (
     <div>
-        <Card style={{margin: '150px auto', width: '50%', padding: '20px', borderRadius: '10px',}}>
-          <div className="logo" style={{display: 'flex', placeItems: 'center'}}>
+        <div className='dashboard'>
+          <div className="logo" style={{display: 'flex', placeItems: 'center', marginBottom: '20px'}}>
             <Avatar src={creator} />
-            <Chip label='About This App' color='primary' style={{marginLeft: 'auto'}} />
+            <div style={{marginLeft: 'auto'}}>
+              <Chip label='About This App' color='primary' style={{margin: '5px', fontWeight: 'bold'}} />
+              <a href='https://pre-deployement-portfolio-test-environment.netlify.app' style={{textDecoration: 'none', cursor: 'pointer'}} target={'_blank'}>
+                <Chip label='Portfolio' color='secondary' style={{margin: '5px', fontWeight: 'bold'}} />
+              </a>
+            </div>
           </div>
           <Divider />
           <BlogContent />
-        </Card>
+        </div>
     </div>
   )
 }
